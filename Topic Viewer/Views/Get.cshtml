@@ -1,0 +1,35 @@
+@model List<WebApplication1.Controllers.Topic>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topics</title>
+    <style>
+        .topic {
+            display: inline-block;
+            padding: 10px;
+            margin: 10px;
+            background-color: #1E1E1E;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease-out;
+        }
+
+        .topic:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Topics</h1>
+    <div>
+        @foreach (var topic in Model)
+        {
+            <a href="/topics/@Model.IndexOf(topic)" class="topic">@topic.Name</a>
+        }
+    </div>
+</body>
+</html>
